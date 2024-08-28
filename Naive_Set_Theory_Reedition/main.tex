@@ -1,9 +1,5 @@
-\documentclass[fontsize=12pt,b5paper,
-pagesize=auto]{book}
-
-\usepackage{titlesec}
-\titlespacing*{\chapter}{0 pt}{-10.5\baselineskip}{8 pt}
-\usepackage[Conny]{fncychap}
+\documentclass[fontsize=12pt,b5paper,pagesize=auto,openany]{book}
+% \usepackage[Conny]{fncychap}
 \usepackage{imakeidx}
 
 \usepackage[colorlinks = true,
@@ -23,6 +19,7 @@ pagesize=auto]{book}
 \usepackage{bookmark}
 \usepackage{setspace}
 \usepackage[titles]{tocloft}
+\usepackage{indentfirst}
 \frenchspacing
 \usepackage{csquotes}
 \MakeOuterQuote{"}
@@ -33,7 +30,7 @@ pagesize=auto]{book}
 \newtheoremstyle{axiom} % name
     {\topsep}                    % Space above
     {\topsep}                    % Space below
-    {\itshape}                   % Body font
+    {\itshape\addtolength{\leftskip}{\parindent}}                   % Body font
     {}                           % Indent amount
     {\bfseries}                   % Theorem head font
     {}                          % Punctuation after theorem head
@@ -46,15 +43,18 @@ pagesize=auto]{book}
 \newtheoremstyle{exc} % name
     {\topsep}                    % Space above
     {\topsep}                    % Space below
-    {}                   % Body font
+    {\addtolength{\leftskip}{\parindent}}                   % Body font
     {}                           % Indent amount
-    {\bfseries}                   % Theorem head font
-    {}                          % Punctuation after theorem head
+    {\scshape}                   % Theorem head font
+    {.}                          % Punctuation after theorem head
     {.5em}                       % Space after theorem head
-    {#3}  % Theorem head spec (can be left empty, meaning ‘normal’)
+    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
 
 \theoremstyle{exc}
-\newtheorem*{exercise}{}
+\newtheorem*{exercise}{Exercise}
+
+\newcommand{\subtitle}[1] {\textsc{#1}.\hspace{.5em}}
+\newcommand{\subtitleup}[1] {#1.\hspace{.5em}}
 
 %---- Package to create the C for collection of sets - %
 \usepackage{fontspec}
@@ -71,12 +71,35 @@ pagesize=auto]{book}
 \usepackage{emptypage}
 %---- Set up Header----------------------------------- %
 \usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
 \pagestyle{fancy}
-\fancyfoot{}
-\fancyhead[R]{\leftmark}
-\fancyhead[L]{\thepage}
+\fancyhf{}
+\fancyhead[LE, RO]{\thepage}
+\fancyhead[CE]{\MakeUppercase{Naive Set Theory}}
+\fancyhead[CO]{\MakeUppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0.1pt}
 % ---------------------------------------------------- %
+
+\usepackage{titlesec}
+\titleformat
+{\chapter} % command
+[display] % shape
+{\filcenter\large} % format
+{
+    \MakeUppercase{\chaptername\ \thechapter}\\
+    \rule{0.3\textwidth}{1pt}
+} % label
+{1ex} % sep
+{
+    \LARGE\bfseries
+    \MakeUppercase
+} % before-code
+[
+    \vspace{-0.75ex}%
+    \rule{0.8\textwidth}{2pt}
+] % after-code
+
+\titlespacing{\chapter}{0 pt}{0.5\baselineskip}{32 pt}
 
 %------------------------------%
 \begin{document}
@@ -95,23 +118,31 @@ pagesize=auto]{book}
 \setlength{\headheight}{14.49998pt}
 \setlength{\parindent}{0.75\parindent}
 
+\setcounter{secnumdepth}{-1}
 % PREFACES
-\chapter*{Preface by the Editor} 
-\addcontentsline{toc}{chapter}{Preface by the Editor}
+\chapter{Preface by the Editor} 
 \input{Chapters/Editor_Preface}
 
-\chapter*{Preface by the Author} 
-\addcontentsline{toc}{chapter}{Preface by the Author}
+\chapter{Preface by the Author} 
 \input{Chapters/Preface}
 
 \clearpage\phantomsection
-\pdfbookmark{\contentsname}{toc}
+
+\newlength{\numlen}
+\setlength{\numlen}{1em}
+\renewcommand{\cftchapfont}{\scshape\bfseries}
+\renewcommand{\cftchappresnum}{\hfill}
+\renewcommand{\cftchapaftersnum}{\hspace*{\numlen}}
+\addtolength{\cftchapnumwidth}{\numlen}
 \setlength{\cftparskip}{-10pt}
-\scshape
+
+\pdfbookmark{\contentsname}{toc}
 \tableofcontents
-\upshape
 
 \mainmatter
+\fancyhead[RE, LO]{\textsc{Ch.\ \thechapter}}
+
+\setcounter{secnumdepth}{0}
 
 % CHAPTER 1
 \chapter{The Axiom of Extension}
@@ -163,6 +194,7 @@ pagesize=auto]{book}
 
 % CHAPTER 13
 \chapter{Arithmetic}
+\label{ch:arithmetic}
 \input{Chapters/Chapter_13}
 
 % CHAPTER 14
@@ -171,6 +203,7 @@ pagesize=auto]{book}
 
 % CHAPTER 15
 \chapter{The Axiom Of Choice}
+\label{ch:choice}
 \input{Chapters/Chapter_15}
 
 % CHAPTER 16
@@ -212,6 +245,8 @@ pagesize=auto]{book}
 % CHAPTER 25
 \chapter{Cardinal Numbers}
 \input{Chapters/Chapter_25}
+
+\fancyhead[RE, LO]{}
 
 % INDEX
 \printindex

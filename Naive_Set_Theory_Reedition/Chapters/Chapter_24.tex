@@ -7,31 +7,27 @@ The definition of cardinal numbers can be approached in several different ways, 
 
 If $a$ and $b$ are cardinal numbers, and if $A$ and $B$ are disjoint sets with card $A = a$ and card $B = b$, we write, by definition, $a + b =$ card $(A \cup B)$. If $C$ and $D$ are disjoint sets with card $C = a$ and card $D = b$, then $A \sim C$ and $B \sim D$; it follows that $A \cup B \sim C \cup D$, and hence that $a + b$ is unambiguously defined, independently of the arbitrary choice of $A$ and $B$. Cardinal addition, thus defined, is commutative $(a + b = b + a)$, and associative $(a + (b + c) = (a + b) + c)$; these identities are immediate consequences of the corresponding facts about the formation of unions.
 
-\begin{exercise}[\textsc{Exercise}. ] Prove that if $a, b, c$ and $d$ are cardinal numbers such that $a \le b$ and $c \le d$, then $a + c \le b + d$. 
+\begin{exercise} Prove that if $a, b, c$ and $d$ are cardinal numbers such that $a \le b$ and $c \le d$, then $a + c \le b + d$. 
 \end{exercise}
 
 There is no difficulty about defining addition for infinitely many summands. If $\{ a_{i} \}$ is a family of cardinal numbers, and if $\{ A_{i} \}$ is a correspondingly indexed family of pairwise disjoint sets such that card $A_{i} = a_{i}$ for each $i$, then we write, by definition,
-
 \begin{equation*}
 \sum_{i} a_{i} = \text{ card } (\bigcup_{i} A_{i} ).
 \end{equation*}
-
 As before, the definition is unambiguous.
 
 To define the product $ab$ of two cardinal numbers $a$ and $b$, we find sets $A$ and $B$ with card $A = a$ and card $B = b$, and we write $ab =$ card $(A \times B)$. The replacement of $A$ and $B$ by equivalent sets yields the same value of the product. Alternatively, we could have defined $ab$ by "adding $a$ to itself $b$ times"; this refers to the formation of the infinite sum $\sum_{i \in I} a_{i}$, where the indexed set $I$ has cardinal number $b$, and where $a_{i} = a$ for each $i$ in $I$. The reader should have no difficulty in verifying that this proposed alternative definition is indeed equivalent to the one that uses Cartesian products. Cardinal multiplication is commutative $(ab = ba)$ and associative $(a(bc) = (ab)c)$, and multiplication distributes over addition $(a(b + c) = ab + ac)$; proofs are elementary. 
 
-\begin{exercise}[\textsc{Exercise}. ] Prove that if $a$, $b$, $c$, and $d$ are cardinal numbes such that $a \le b$ and $c \le d$, then $ac \le bd$.
+\begin{exercise} Prove that if $a$, $b$, $c$, and $d$ are cardinal numbes such that $a \le b$ and $c \le d$, then $ac \le bd$.
 \end{exercise}
 
-There is no difficulty about defining multiplication for infinitely many factors. If $\{ a_{i} \}$ is a family of cardinal numbers, if $\{ A_{i} \}$ is a correspondingly indexed family of sets such that card $A_{i} = a_{i}$ for each $i$, then we write, by definition, 
-
+There is no difficulty about defining multiplication for infinitely many factors. If $\{ a_{i} \}$ is a family of cardinal numbers, and if $\{ A_{i} \}$ is a correspondingly indexed family of sets such that card $A_{i} = a_{i}$ for each $i$, then we write, by definition, 
 \begin{equation*}
 \prod_{i} a_{i} = \text{ card } ( \bigtimes_{i} A_{i} ).
 \end{equation*}
-
 The definition is unambiguous. 
 
-\begin{exercise}[\textsc{Exercise}. ] If $\{ a_{i} \}$ ($i \in I$) and $\{ b_{i} \}$ ($i \in I$) are families of cardinal numbers such that $a_{i} < b_{i}$ for each $i$ in $I$, then $\sum_{i}a_{i} < \prod_{i}b_{i}$. 
+\begin{exercise} If $\{ a_{i} \}$ ($i \in I$) and $\{ b_{i} \}$ ($i \in I$) are families of cardinal numbers such that $a_{i} < b_{i}$ for each $i$ in $I$, then $\sum_{i}a_{i} < \prod_{i}b_{i}$. 
 \end{exercise}
 
 We can go from products to exponents the same way as we went from sums to products. The definition of $a^{b}$, for cardinal numbers $a$ and $b$, is most profitably given directly, but an alternative approach goes via repeated multiplication. For the direct definition, find sets $A$ and $B$ with card $A = a$ and card $B = b$, and write $a^{b} =$ card $A^{B}$. Alternatively, to define $a^{b}$ "multiply $a$ by itself $b$ times." More precisely: form $\prod_{i \in I} a_{i}$, where the index set $I$ has cardinal number $b$, and where $a_{i} = a$ for each $i$ in $I$. The familiar laws of exponents hold. That is, if $a, b$, and $c$ are cardinal numbers, then 
@@ -42,25 +38,21 @@ a^{b+c} &= a^{b}c^{c}, \\
 a^{bc} &= (c^{b})^{c}. 
 \end{align*}
 
-\begin{exercise}[\textsc{Exercise}. ] Prove that if $a, b$, and $c$ are cardinal numbers such that $a \le b$, then $a^{c} \le b^{c}$. Prove that if $a$ and $b$ are finite, greater than 1, and if $c$ is infinite, then $a^{c} = b^{c}$.
+\begin{exercise} Prove that if $a, b$, and $c$ are cardinal numbers such that $a \le b$, then $a^{c} \le b^{c}$. Prove that if $a$ and $b$ are finite, greater than 1, and if $c$ is infinite, then $a^{c} = b^{c}$.
 \end{exercise}
 
 The preceding definitions and their consequences are reasonably straight-forward and not at all surprising. If they are restricted to finite sets only, the result is the familiar finite arithmetic. The novelty of the subject arises in the formation of sums, products, and powers in which at least one term is infinite. The words "finite" and "infinite" are used here in a very natural sense: a cardinal number is \textit{finite} if it is the cardinal number of a finite set, and \textit{infinite} otherwise. 
 
 If $a$ and $b$ are cardinal numbers such that $a$ is finite and $b$ is infinite, then 
-
 \begin{equation*}
 a + b = b.
 \end{equation*}
-
 For the proof, suppose that $A$ and $B$ are disjoint sets such that $A$ is equivalent to some natural number $k$ and $B$ is infinite; we are to prove that $A \cup B \sim B$. Since $\omega \precsim B$, we may and do assume that $\omega \subset B$. We define a mapping $f$ from $A \cup B$ to $B$ as follows: the restriction of $f$ to $A$ is a one-to-one correspondence between $A$ and $k$, the restriction of $f$ to $\omega$ given by $f(n) = n + k$ for all $n$, and the restriction of $f$ to $B - \omega$ is the identity mapping on $B - \omega$. Since the result is a one-to-one correspondence between $A \cup B$ and $B$, the proof is complete. 
 
 Next: if $a$ is an infinite cardinal number, then 
-
 \begin{equation*}
 a + a = a. 
 \end{equation*}
-
 For the proof, let $A$ be a set with card $A = a$. Since the set $A \times 2$ is the union of two disjoint sets equivalent to $A$ (namely, $A \times \{ 0 \}$ and $A \times \{ 1 \}$), it would be sufficient to prove that $A \times 2$ is equivalent to $A$. The approach we shall use will not quite prove that much, but it will come close enough. The idea is to approximate the construction of the desired one-to-one correspondence by using larger and larger subsets of $A$. 
 
 Precisely speaking, let $\mathcal{F}$ be the collection of all functions $f$ such that the domain of $f$ is of the form $X \times 2$, for some subset $X$ of $A$, and such that $f$ is a one-to-one correspondence between $X \times 2$ and $X$. If $X$ is a countably infinite subset of $A$, then $X \times 2 \sim X$. This implies that the collection $\mathcal{F}$ is not empty; at the very least it contains the one-to-one correspondences between $X \times 2$ and $X$ for the countably infinite subsets $X$ of $A$. The collection $\mathcal{F}$ is partially ordered by extension. Since a straightforward verification shows that the hypotheses of Zorn's lemma are satisfied, it follows that $\mathcal{F}$ contains a maximal element $f$ with ran $f = X$, say. 
@@ -70,22 +62,18 @@ Assertion: $A - X$ is finite. If $A - X$ were infinite, then it would include a 
 Since card $X\ +$ card $X =$ card $X$, and since card $A = $ card $X\ +$ card $(A - X)$, the fact that $A - X$ is finite completes the proof that card $A\ +$ card $A$ = card $A$.
 
 Here is one more result in additive cardinal arithmetic: if $a$ and $b$ are cardinal numbers at least one of which is infinite, and if $c$ is equal to the larger one of $a$ and $b$, then 
-
 \begin{equation*}
 a + b = c
 \end{equation*}
-
 Suppose that $b$ is infinite, and let $A$ and $B$ be disjoint sets with card $A = a$ and card $B = b$. Since $a \le c$ and $b \le c$, it follows that $a + b \le c + c$, and since $c \le$ card ($A \cup B$), it follows that $c \le a + b$. The result follows from the antisymmetry of the ordering of cardinal numbers. 
 
 The principal result in multiplicative cardinal arithmetic is that if $a$ is an infinite cardinal number, then 
-
 \begin{equation*}
 a \cdot a = a. 
 \end{equation*}
-
 The proof resembles the proof of the corresponding additive fact. Let $\mathcal{F}$ be the collection of all functions $f$ such that the domain of $f$ is of the form $X \times X$ for some subset $X$ of $A$, and such that $f$ is a one-to-one correspondence between $X \times X$ and $X$. If $X$ is a countably infinite subset of $A$, then $X \times X \sim X$ .This implies that the collection $\mathcal{F}$ is not empty; at the very least it contains the one-to-one correspondences between $X \times X$ and $X$ for the countably infinite subsets $X$ of $A$. The collection $\mathcal{F}$ is partially ordered by extension. The hypotheses of Zorn's lemma are easily verified, and it follows that $\mathcal{F}$ contains a maximal element $f$ with ran $f = X$, say. Since (card $X$)(card $X) =$ card $X$, the proof may be completed by showing that card $X =$ card $A$. 
 
 Assume that card $X <$ card $A$. Since card $A$ is equal to the larger one of card $X$ and card ($A - X$), this implies that card $A =$ card ($A - X$), and hence that card $X <$ card ($A - X$). From this it follows that $A - X$ has a subset $Y$ equivalent to $X$. Since each of the disjoint sets $X \times Y$, $Y \times X$, and $Y \times Y$ is infinite and equivalent to $X \times X$, hence to $X$, and hence to $Y$, it follows that their union is equivalent to $Y$. By combining $f$ with a one-to-one correspondence between that union and $Y$, we obtain a proper extension of $f$, in contradiction to the assumed maximality. This implies that our present hypothesis (card $X <$ card $A$) is untenable and hence completes the proof. 
 
-\begin{exercise}[\textsc{Exercise}. ] Prove that if $a$ and $b$ are cardinal numbers at least one of which is infinite, then $a + b = ab$. Prove that if $a$ and $b$ are cardinal numbers such that $a$ is infinite and $b$ is finite, then $a^{b} = a$.
+\begin{exercise} Prove that if $a$ and $b$ are cardinal numbers at least one of which is infinite, then $a + b = ab$. Prove that if $a$ and $b$ are cardinal numbers such that $a$ is infinite and $b$ is finite, then $a^{b} = a$.
 \end{exercise}

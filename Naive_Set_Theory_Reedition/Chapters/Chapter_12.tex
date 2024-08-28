@@ -1,35 +1,26 @@
 We enter now into a minor digression. The purpose of the digression is to make fleeting contact with the arithmetic theory of natural numbers. From the set-theoretic point of view this is a pleasant luxury. 
 
 The most important thing we know about the set $\omega$ of all natural numbers is that it is the unique successor set that is a subset of every successor get. To say that $\omega$ is a successor set means that
-
 \begin{equation}
 \label{eq12.1}
 0 \in \omega \tag{I}
 \end{equation}
-
 (where, of course, $0 = \emptyset$), and that 
-
 \begin{equation}
 \label{eq12.2}
 \text{\textit{if} } n \in\omega, \text{ \textit{then} } n^{+} \in \omega \tag{II}
 \end{equation}
-
 (where $n^{+} = n \cup \{ n \}$). The minimality property of $\omega$ can be expressed by saying that if a subset $S$ of $\omega$ is a successor set, then $S = \omega$. Alternatively, and in more primitive terms,
-
 \begin{equation}
 \label{eq12.3}
 \text{\textit{if} } S \subset \omega, \text{ \textit{if} } 0 \in S, \text{ \textit{and if} } n^{+} \in S \text{ \textit{whenever} } n \in S, \text{ \textit{then} } S = \omega . \tag{III}
 \end{equation}
-
 Property \eqref{eq12.3} is known as the \textbf{principle of mathematical induction.}\index{induction} We shall now add to this list of properties of $\omega$ two others: 
-
 \begin{equation}
 \label{eq12.4}
 n^{+} \neq 0 \text{ \textit{for all} } n \text{ \textit{in} } \omega , \tag{IV}
 \end{equation}
-
 and
-
 \begin{equation}
 \label{eq12.5}
 \text{\textit{if} } n \text{ \textit{and} } m \text{ \textit{are in} } \omega , \text{ \textit{and if} } n^{+} = m^{+} , \text{ \textit{then} } n = m.\tag{V}
@@ -50,7 +41,7 @@ Induction is often used not only to prove things but also to define things. Supp
 \begin{named}[Recursion theorem.]\index{recursion} If $a$ is an element of a set $X$, and if $f$ is a function from $X$ into $X$, then there exists a function $u$ from $\omega$ into $X$ such that $u(0) = a$ and such that $u(n^{+}) = f(u(n))$ for all $n$ in $\omega$. 
 \end{named}
 
-Proof. Recall that a function from $\omega$ to $X$ is a certain kind of subset of $ \omega \times X$; we shall construct $u$ explicitly as a set of ordered  pairs. Consider, for this purpose, the collection $\mathcal{C}$ of all those subsets $A$ of $\omega \times X$ for which $(0, a) \in A$ and for which $(n^{+}, f(x)) \in A$ whenever $(n, x) \in A$. Since $ \omega \times X$ has these properties, the collection $\mathcal{C}$ is not empty. We may, therefore, form the intersection of all the sets of the collection $\mathcal{C}$. Since it is easy to see that $u$ itself belongs to $\mathcal{C}$, it remains only to prove that $u$ is a function. We are to prove, in other words, that for each natural number $n$ there exists at most one element $x$ of $X$ such that $(n, x) \in u$. (Explicitly : if both $(n, x)$ and $(n, y)$ belong to $u$, then $x = y$.) The proof is inductive. Let $S$ be the set of all those natural numbers $n$ for which it is indeed true that $(n, x) \in u$ for at most one $x$. We shall prove that $0 \in S$ and that if $n \in S$,then $n^{+} \in S$.
+\subtitle{Proof} Recall that a function from $\omega$ to $X$ is a certain kind of subset of $ \omega \times X$; we shall construct $u$ explicitly as a set of ordered  pairs. Consider, for this purpose, the collection $\mathcal{C}$ of all those subsets $A$ of $\omega \times X$ for which $(0, a) \in A$ and for which $(n^{+}, f(x)) \in A$ whenever $(n, x) \in A$. Since $ \omega \times X$ has these properties, the collection $\mathcal{C}$ is not empty. We may, therefore, form the intersection of all the sets of the collection $\mathcal{C}$. Since it is easy to see that $u$ itself belongs to $\mathcal{C}$, it remains only to prove that $u$ is a function. We are to prove, in other words, that for each natural number $n$ there exists at most one element $x$ of $X$ such that $(n, x) \in u$. (Explicitly : if both $(n, x)$ and $(n, y)$ belong to $u$, then $x = y$.) The proof is inductive. Let $S$ be the set of all those natural numbers $n$ for which it is indeed true that $(n, x) \in u$ for at most one $x$. We shall prove that $0 \in S$ and that if $n \in S$,then $n^{+} \in S$.
 
 Does $0$ belong to $S$? If not, then $(0,b) \in u$ for some $b$ distinct from $a$. Consider, in this case, the set $u - \{ (0, b) \}$. Observe that this diminished set still contains $(0, a)$ (since $a \neq b$), and that if the diminished set contains $(n, x)$, then it contains $(n^{+}, f(x))$ also. The reason for the second assertion is that since $n^{+} \neq 0$, the discarded element is not equal to $(n^{+}, f(x))$. In other words, $u - \{ (0, b) \} \in \mathcal{C}$. This contradicts the fact that $u$ is the smallest set in $\mathcal{C}$, and we may conclude that $0 \in S$. 
 
@@ -58,5 +49,5 @@ Suppose now that $n \in S$; this means that there exists a unique element $x$ in
 
 The proof of the recursion theorem is complete. An application of the recursion theorem is called \textit{definition by induction}\index{definition by induction}. 
 
-\begin{exercise}[\textsc{Exercise}. ] Prove that if $n$ is a natural number, then $n \neq n^{+}$; if $n \neq 0$, then $n = m^{+}$ for some natural number $m$. Prove that $ \omega $ is transitive. Prove that if $E$ is a non-empty subset of some natural number, then there exists an element $k$ in $E$ such that $k \in m$ whenever $m$ is an element of $E$ distinct from $k$.
+\begin{exercise} Prove that if $n$ is a natural number, then $n \neq n^{+}$; if $n \neq 0$, then $n = m^{+}$ for some natural number $m$. Prove that $ \omega $ is transitive. Prove that if $E$ is a non-empty subset of some natural number, then there exists an element $k$ in $E$ such that $k \in m$ whenever $m$ is an element of $E$ distinct from $k$.
 \end{exercise}
